@@ -1,5 +1,4 @@
-
-
+//è€é§±
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,96 +7,92 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Final {
- // ¦@¥|ºØ¶Â®ç¡A¬õ¤ß¡A¤è¶ô¡A±öªáµP¦U13±i
- static String Player[][] = new String[13][4];
- // ¥ş³¡¦@52±iµP
- String Card[] = new String[52];
- String Player1[] = new String[5];
- static ArrayList list=new ArrayList();
- 
- /////////
- public static void main(String[] args) {
-  // TODO Auto-generated method stub
-  Final pk = new Final();
-  pk.createCard();
-  for (int i = 0; i < 13; i++) {
-   for (int j = 0; j < 4; j++) {
-    pk.createdetail(i, j);
-   }
-  }
-  pk.printdetail();
-  System.out.println(pk.cardList());
- }
+	// å…±å››ç¨®é»‘æ¡ƒï¼Œç´…å¿ƒï¼Œæ–¹å¡Šï¼Œæ¢…èŠ±ç‰Œå„13å¼µ
+	static String Player[][] = new String[13][4];
+	// å…¨éƒ¨å…±52å¼µç‰Œ
+	String Card[] = new String[52];
+	String Player1[] = new String[5];
+	static ArrayList list = new ArrayList();
 
- ////// ²£¥Í¥d¤ù¡G¶Â®ç¡A¬õ¤ß¡A¤è¶ô¡A±öªá
- void createCard() {
-  for (int j = 0; j < 52; j++) {
-   switch (j % 4) {
-   case 1:
-    Card[j] = "¶Â®ç" + (j % 13 + 1);
-    break;
-   case 2:
-    Card[j] = "¬õ¤ß" + (j % 13 + 1);
-    break;
-   case 3:
-    Card[j] = "¤è¶ô" + (j % 13 + 1);
-    break;
-   case 0:
-    Card[j] = "±öªá" + (j % 13 + 1);
-    break;
-   }
-  }
- }
- 
- 
- 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Final pk = new Final();
+		pk.createCard();
+		for (int i = 0; i < 13; i++) {
+			for (int j = 0; j < 4; j++) {
+				pk.createdetail(i, j);
+			}
+		}
+		pk.printdetail();
+		System.out.println(pk.cardList());
+	}
 
- ///// ²£¥Í¼Æ¦r
- void createdetail(int i, int j) {
-  int x = 0;
-  do {
-   x = (int) (Math.random() * 52);
-  } while (chk(x));
+	////// ç”¢ç”Ÿå¡ç‰‡ï¼šé»‘æ¡ƒï¼Œç´…å¿ƒï¼Œæ–¹å¡Šï¼Œæ¢…èŠ±
+	void createCard() {
+		for (int j = 0; j < 52; j++) {
+			switch (j % 4) {
+			case 1:
+				Card[j] = "é»‘æ¡ƒ" + (j % 13 + 1);
+				break;
+			case 2:
+				Card[j] = "ç´…å¿ƒ" + (j % 13 + 1);
+				break;
+			case 3:
+				Card[j] = "æ–¹å¡Š" + (j % 13 + 1);
+				break;
+			case 0:
+				Card[j] = "æ¢…èŠ±" + (j % 13 + 1);
+				break;
+			}
+		}
+	}
 
-  savedetail(x, i, j);
- }
+	///// ç”¢ç”Ÿæ•¸å­—
+	void createdetail(int i, int j) {
+		int x = 0;
+		do {
+			x = (int) (Math.random() * 52);
+		} while (chk(x));
 
- ///// §PÂ_¬O§_­«ÂĞ
- boolean chk(int x) {
-  for (int i = 0; i < 13; i++) {
-   for (int j = 0; j < 4; j++) {
-    if (Card[x] == Player[i][j]) {
-     return true;
-    }
-   }
-  }
-  return false;
- }
+		savedetail(x, i, j);
+	}
 
- ///// ±N­È¶ñ¤J
- void savedetail(int x, int i, int j) {
-  Player[i][j] = Card[x];
- }
+	///// åˆ¤æ–·æ˜¯å¦é‡è¦†
+	boolean chk(int x) {
+		for (int i = 0; i < 13; i++) {
+			for (int j = 0; j < 4; j++) {
+				if (Card[x] == Player[i][j]) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
- ///// ¦C¦Lµ²ªG
- void printdetail() {
-  for (int j = 0; j < 4; j++) {
-   for (int i = 0; i < 13; i++) {
-    System.out.print(Player[i][j] + "\t");
-   }
-   System.out.println();
-  }
- }
+	///// å°‡å€¼å¡«å…¥
+	void savedetail(int x, int i, int j) {
+		Player[i][j] = Card[x];
+	}
 
- ///// §â¬~¦nªºµP ©ñ¶iarraylist
- public static  ArrayList cardList() {
+	///// åˆ—å°çµæœ
+	void printdetail() {
+		for (int j = 0; j < 4; j++) {
+			for (int i = 0; i < 13; i++) {
+				System.out.print(Player[i][j] + "\t");
+			}
+			System.out.println();
+		}
+	}
+
+	///// æŠŠæ´—å¥½çš„ç‰Œ æ”¾é€²arraylist
+	public static ArrayList cardList() {
 //  ArrayList list = new ArrayList();
-  for (int j = 0; j < 4; j++) {
-   for (int i = 0; i < 13; i++) {
-    list.add(Player[i][j]);
-   }
-  }
-  return list;
+		for (int j = 0; j < 4; j++) {
+			for (int i = 0; i < 13; i++) {
+				list.add(Player[i][j]);
+			}
+		}
+		return list;
 //  for(int k=0;k<5;k++) {
 //   Player1[k]=(String) list.get(0);
 //   //list.remove(0);
@@ -107,6 +102,6 @@ public class Final {
 //
 //  System.out.println(Arrays.toString(Player1));
 
- }
+	}
 
 }
