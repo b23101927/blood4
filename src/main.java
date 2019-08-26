@@ -1,4 +1,4 @@
-
+//SHIT
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,11 +26,7 @@ public class main extends JFrame implements ActionListener, Broadcast {
 	private int judge_whether_use_card5 = 0;// 看有沒有用指定
 	private int judge_player = 1;// 判斷換誰出牌
 	private int counts_cards = 5;// 發牌用ㄉ 拿完手牌的
-	private static String card_01;// BUTTON上的字 初始手牌
-	private static String card_02;
-	private static String card_03;
-	private static String card_04;
-	private static String card_05;
+	private static String card_01,card_02,card_03,card_04,card_05;// BUTTON上的字 初始手牌
 	private int total_number_int; // ��憿舐內�閮��
 	private String total_number_str = "00";// 憿舐內�
 	private JLabel show_number; // 顯示現在數字多少(上面的總數
