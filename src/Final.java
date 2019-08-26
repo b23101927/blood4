@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-// 拜託過
-=======
 
->>>>>>> Stashed changes
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
